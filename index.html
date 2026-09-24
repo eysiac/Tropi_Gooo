@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TropiGo · Fresh Fruit Blends</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- ========== NAVIGATION ========== -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo-area" onclick="goHome()">
+                    <img src="tttptptppt.jpg" alt="TropiGo Logo" class="logo-icon" />
+                    <span class="brand">Tropi<span>Go</span></span>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <button class="nav-btn active" data-section="home"><i class="fas fa-home"></i> Home</button>
+                    <button class="nav-btn" data-section="menu"><i class="fas fa-utensils"></i> Menu</button>
+                    <button class="nav-btn" data-section="story"><i class="fas fa-book-open"></i> Story</button>
+                    <button class="nav-btn" data-section="reviews"><i class="fas fa-star"></i> Reviews</button>
+                    <button class="nav-btn" data-section="faqs"><i class="fas fa-question-circle"></i> FAQs</button>
+                    <button class="nav-btn" data-section="socials"><i class="fas fa-share-alt"></i> Socials</button>
+                    <button class="nav-btn order-btn" id="orderNavBtn"><i class="fas fa-clipboard-list"></i> Order</button>
+                    <button class="nav-btn" id="chatNavBtn"><i class="fas fa-comment-dots"></i> Chat</button>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- ========== PAGE CONTENT (switches between main & order) ========== -->
+        <div class="page-content">
+
+            <!-- ===== MAIN PAGE (all sections except order) ===== -->
+            <div class="main-page" id="mainPage">
+
+                <!-- ===== HOME / HERO ===== -->
+                <section id="section-home" class="section">
+                    <div class="hero-section">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <i class="fas fa-leaf"></i> 100% Natural · Fresh Daily
+                            </div>
+                            <h1 class="hero-title">
+                                <span class="tropi">Tropi</span><span class="go">Go</span>
+                            </h1>
+                            <p class="hero-subtitle">Made it Fresh, Made to Refresh</p>
+                            <p class="hero-description">
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary" onclick="scrollToSection('menu')">
+                                    <i class="fas fa-utensils"></i> Explore Menu
+                                </button>
+                                <button class="btn-secondary" onclick="showOrderPage()">
+                                    <i class="fas fa-shopping-bag"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+    
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SIGNATURE ===== -->
+                <section id="section-signature" class="section">
+                    <div class="section-label">✦ Our Signature Blend ✦</div>
+                    <h2 class="section-title">Smooth, Creamy &amp; Dreamy</h2>
+                    <div class="product-feature">
+                        <div class="product-image">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="product-details">
+                            <h3><span class="tropi">Tropi</span><span class="go">Go</span> <span class="product-sub">· Signature</span></h3>
+                            <div class="product-tags">
+                                <span class="tag"><i class="fas fa-tag"></i> ₱79</span>
+                                <span class="tag"><i class="fas fa-cup"></i> 16oz</span>
+                                <span class="tag"><i class="fas fa-apple-alt"></i> Healthy</span>
+                                <span class="tag"><i class="fas fa-heartbeat"></i> Vitamin C</span>
+                            </div>
+                            <p class="product-desc">
+                                <i class="fas fa-check-circle"></i>
+                                Our signature mango lassi made with fresh, all-natural fruits. Smooth, creamy, and packed with tropical goodness.
+                            </p>
+                            <div class="product-nutrients">
+                                <span><i class="fas fa-bolt"></i> 180 kcal</span>
+                                <span><i class="fas fa-apple-alt"></i> 6g Fiber</span>
+                                <span><i class="fas fa-vitamins"></i> 45% Vitamin C</span>
+                                <span><i class="fas fa-droplet"></i> 350mg Potassium</span>
+                            </div>
+                            <button class="btn-primary" onclick="showOrderPage()" style="margin-top:16px; padding:10px 28px; font-size:14px;">
+                                <i class="fas fa-shopping-bag"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== FEATURES ===== -->
+                <section id="section-features" class="section">
+                    <div class="section-label">✦ Why TropiGo ✦</div>
+                    <h2 class="section-title">Goodness in Every Sip</h2>
+                    <div class="home-features">
+                        <div class="feature-card">
+                            <i class="fas fa-fruit"></i>
+                            <h4>100% Natural Fruits</h4>
+                            <p>Fresh, real fruits — no artificial flavors or preservatives.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Packed with Nutrients</h4>
+                            <p>Rich in Vitamin C, fiber, and essential minerals.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Healthy & Guilt-Free</h4>
+                            <p>Naturally sweetened. Good for you and delicious.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tint"></i>
+                            <h4>No Added Sugar</h4>
+                            <p>Sweetened only with natural fruit sugars and honey.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== MENU (5 items) ===== -->
+                <section id="section-menu" class="section">
+                    <div class="section-label">✦ Our Menu ✦</div>
+                    <h2 class="section-title">Fresh Blends for Every Craving</h2>
+                    <div class="menu-grid-full">
+                        <div class="menu-item-full">
+                            <div class="menu-icon"><i class="fas fa-mango"></i></div>
+                            <div>
+                                <h4>Mango Lassi Classic</h4>
+                                <p>Mango, yogurt, honey — ₱79 (16oz)</p>
+                            </div>
+                            <button class="btn-small" onclick="showOrderPage()">Order</button>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-icon"><i class="fas fa-leaf"></i></div>
+                            <div>
+                                <h4>Matcha Mango Lassi</h4>
+                                <p>Matcha, mango, yogurt — ₱79 (16oz)</p>
+                            </div>
+                            <button class="btn-small" onclick="showOrderPage()">Order</button>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-icon"><i class="fas fa-watermelon-slice"></i></div>
+                            <div>
+                                <h4>Watermelon Mango Lassi</h4>
+                                <p>Watermelon, mango, yogurt — ₱89 (16oz)</p>
+                            </div>
+                            <button class="btn-small" onclick="showOrderPage()">Order</button>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-icon"><i class="fas fa-candy-cane"></i></div>
+                            <div>
+                                <h4>Dark Chocolate Mango Lassi</h4>
+                                <p>Dark chocolate, mango, yogurt — ₱89 (16oz)</p>
+                            </div>
+                            <button class="btn-small" onclick="showOrderPage()">Order</button>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-icon"><i class="fas fa-cheese"></i></div>
+                            <div>
+                                <h4>Mango Cheesecake Lassi</h4>
+                                <p>Mango, cream cheese, graham — ₱99 (16oz)</p>
+                            </div>
+                            <button class="btn-small" onclick="showOrderPage()">Order</button>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:30px;">
+                        <button class="btn-secondary" onclick="showOrderPage()" style="display:inline-flex;">
+                            <i class="fas fa-shopping-bag"></i> Order Now
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ===== STORY ===== -->
+                <section id="section-story" class="section">
+                    <div class="section-label">✦ Our Story ✦</div>
+                    <h2 class="section-title">From a Dream to a Blend</h2>
+                    <div class="story-content">
+                        <div class="story-image">
+                            <i class="fas fa-blender" style="font-size:80px; color:#d9a441;"></i>
+                        </div>
+                        <div class="story-text">
+                            <p>TropiGo was born out of a real love for rich, satisfying tropical flavors. We set out to craft the ultimate Creamy Mango Lassi—hitting the perfect balance between sweet, tangy, and silky smooth.</p>
+                            <p>Every cup is freshly blended using real, sun-ripened mangoes carefully sourced from dedicated local farmers, combined with a rich, creamy base that gives it that signature refreshing kick. No artificial fillers—just pure, velvety goodness crafted to support local growers while giving you the ultimate tropical boost.</p>
+                            <p>Whether you need a mid-day energy pick-me-up, a cooling treat on a warm day, or a delicious drink to pair with your favorite meal, TropiGo brings you pure comfort in every sip.</p>
+                            <p style="margin-top:12px;"><i class="fas fa-heart" style="color:#d9a441;"></i> <strong>Our mission:</strong> To serve fresh, creamy, and delightfully refreshing mango lassi—supporting local fruit farmers, bringing high quality and real flavor, and delivering pure satisfaction to everyone, one cup at a time.</p>
+                            <button class="btn-primary" onclick="scrollToSection('menu')" style="margin-top:20px;">
+                                <i class="fas fa-utensils"></i> Explore Our Menu
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== REVIEWS ===== -->
+                <section id="section-reviews" class="section">
+                    <div class="section-label">✦ What Our Customers Say ✦</div>
+                    <h2 class="section-title">Loved by Many</h2>
+                    <div class="reviews-grid-full">
+                        <div class="review-card-full">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"The best mango lassi I've ever had! So creamy and fresh."</p>
+                            <span class="reviewer">— Maria R.</span>
+                        </div>
+                        <div class="review-card-full">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"Healthy and delicious — my kids love it too!"</p>
+                            <span class="reviewer">— John C.</span>
+                        </div>
+                        <div class="review-card-full">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"Perfect refreshment on a hot day. Highly recommended!"</p>
+                            <span class="reviewer">— Lea S.</span>
+                        </div>
+                        <div class="review-card-full">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"TropiGo is my go-to after workout drink. So refreshing!"</p>
+                            <span class="reviewer">— Mike T.</span>
+                        </div>
+                        <div class="review-card-full">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"Finally, a healthy drink that actually tastes amazing."</p>
+                            <span class="reviewer">— David M.</span>
+                        </div>
+                        <div class="review-card-full">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"The Coco Tropi transports me to the beach. Love it!"</p>
+                            <span class="reviewer">— Rachel S.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== FAQS ===== -->
+                <section id="section-faqs" class="section">
+                    <div class="section-label">✦ Frequently Asked Questions ✦</div>
+                    <h2 class="section-title">Everything You Need to Know</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h4><i class="fas fa-leaf" style="color:#d9a441;"></i> Are your blends 100% natural?</h4>
+                            <p>Yes! All TropiGo blends are made with 100% fresh, all-natural fruits. We never use artificial flavors, preservatives, or added sugars.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-tag" style="color:#d9a441;"></i> How much does a TropiGo blend cost?</h4>
+                            <p>Our Mango Lassi Classic starts at ₱79 for a 16oz serving. Other flavors range from ₱79 to ₱99.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-truck" style="color:#d9a441;"></i> Do you offer delivery?</h4>
+                            <p>Yes! We offer delivery through our partner couriers. You can also choose to pick up your order at our store.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-apple-alt" style="color:#d9a441;"></i> Are your blends healthy?</h4>
+                            <p>Absolutely! Each TropiGo blend is packed with vitamins, minerals, and antioxidants. They're naturally sweetened and perfect for a healthy lifestyle.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-hand-holding-heart" style="color:#d9a441;"></i> Do you have vegan options?</h4>
+                            <p>Yes, all our fruit blends are plant-based and vegan-friendly. We use coconut or almond milk alternatives upon request.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-clock" style="color:#d9a441;"></i> What are your store hours?</h4>
+                            <p>We're open daily from 7:00 AM to 8:00 PM. You can also order online anytime!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SOCIALS (with clickable links) ===== -->
+                <section id="section-socials" class="section">
+                    <div class="section-label">✦ Connect With Us ✦</div>
+                    <h2 class="section-title">Follow TropiGo</h2>
+                    <div class="socials-grid">
+                        <div class="social-card" style="background:linear-gradient(135deg, #E4405F, #d81b60); cursor:pointer;" onclick="window.open('https://www.instagram.com/tropigo.official?igsi=MTFyZjcybzNtd2xvYg%3D%3D', '_blank')">
+                            <i class="fab fa-instagram"></i>
+                            <h4>Instagram</h4>
+                            <p>@TropiGo</p>
+                            <span class="social-link">Follow us →</span>
+                        </div>
+                        <div class="social-card" style="background:linear-gradient(135deg, #1877F2, #0d47a1); cursor:pointer;" onclick="window.open('https://web.facebook.com/profile.php?id=61591663895264', '_blank')">
+                            <i class="fab fa-facebook-f"></i>
+                            <h4>Facebook</h4>
+                            <p>/TropiGo</p>
+                            <span class="social-link">Like us →</span>
+                        </div>
+                        <div class="social-card" style="background:linear-gradient(135deg, #000000, #333333); cursor:pointer;" onclick="window.open('https://x.com/tropigoph?s=11', '_blank')">
+                            <i class="fab fa-x-twitter"></i>
+                            <h4>X</h4>
+                            <p>@TropiGo</p>
+                            <span class="social-link">Follow us →</span>
+                        </div>
+                        <div class="social-card" style="background:linear-gradient(135deg, #FF0000, #cc0000); cursor:pointer;" onclick="window.open('https://www.youtube.com/@TropiGoPhilippines', '_blank')">
+                            <i class="fab fa-youtube"></i>
+                            <h4>YouTube</h4>
+                            <p>TropiGo</p>
+                            <span class="social-link">Subscribe →</span>
+                        </div>
+                        <div class="social-card" style="background:linear-gradient(135deg, #ff0050, #c13584); cursor:pointer;" onclick="window.open('https://www.tiktok.com/@tropigo.official?_r=1&_t=ZS-99OFZiBxbSW', '_blank')">
+                            <i class="fab fa-tiktok"></i>
+                            <h4>TikTok</h4>
+                            <p>@TropiGo</p>
+                            <span class="social-link">Follow us →</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== CTA BANNER ===== -->
+                <section class="cta-banner">
+                    <div class="cta-content">
+                        <h3>Ready to Refresh?</h3>
+                        <p>Order your favorite TropiGo blend today and taste the tropics!</p>
+                        <button class="btn-primary" onclick="showOrderPage()">
+                            <i class="fas fa-shopping-bag"></i> Place an Order
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ===== FOOTER ===== -->
+                <footer class="footer-note">
+                    <div class="footer-brand">
+                        <span class="brand">Tropi<span>Go</span></span>
+                        <p style="font-size:14px; color:#888; margin-top:4px;">Fresh fruit blends made with love.</p>
+                    </div>
+                    <div class="footer-links">
+                        <span onclick="goHome()">Home</span>
+                        <span onclick="scrollToSection('story')">Our Story</span>
+                        <span onclick="scrollToSection('menu')">Menu</span>
+                        <span onclick="scrollToSection('reviews')">Reviews</span>
+                        <span onclick="scrollToSection('faqs')">FAQs</span>
+                        <span onclick="scrollToSection('socials')">Socials</span>
+                        <span class="order-link" onclick="showOrderPage()">Order now</span>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>
+                            <i class="fas fa-heart" style="color:#e74c3c;"></i>
+                            Made to brighten your day — Freshly blended with love
+                        </p>
+                        <div class="meta-bar">
+                            <div class="weather">
+                                <i class="fas fa-cloud-sun"></i>
+                                <span>28°C</span>
+                                <span class="sep">·</span>
+                                <span>Partly cloudy</span>
+                            </div>
+                            <div class="search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search" />
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main-page -->
+
+            <!-- ===== ORDER PAGE (separate) ===== -->
+            <div class="order-page" id="orderPage">
+                <div class="order-page-header">
+                    <div class="order-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h2>Place Your Order</h2>
+                    <p>Freshly blended <strong style="color:#d9a441;">TropiGo</strong> — made just for you</p>
+                </div>
+
+                <div class="order-form-container">
+                    <p class="sub"><span class="tropi">TropiGo</span> blends — 16oz servings</p>
+                    <form id="orderForm">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required />
+
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" id="contact" placeholder="09XXXXXXXXX" required />
+
+                        <label for="product">Select Product</label>
+                        <select id="product" required>
+                            <option value="">-- Select Product --</option>
+                            <option value="Mango Lassi Classic (₱79 - 16oz)">Mango Lassi Classic (₱79 - 16oz)</option>
+                            <option value="Matcha Mango Lassi (₱79 - 16oz)">Matcha Mango Lassi (₱79 - 16oz)</option>
+                            <option value="Watermelon Mango Lassi (₱89 - 16oz)">Watermelon Mango Lassi (₱89 - 16oz)</option>
+                            <option value="Dark Chocolate Mango Lassi (₱89 - 16oz)">Dark Chocolate Mango Lassi (₱89 - 16oz)</option>
+                            <option value="Mango Cheesecake Lassi (₱99 - 16oz)">Mango Cheesecake Lassi (₱99 - 16oz)</option>
+                        </select>
+
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" min="1" value="1" required />
+
+                        <label for="delivery">Preferred Pickup/Delivery</label>
+                        <select id="delivery" required>
+                            <option value="">Select</option>
+                            <option>Pickup</option>
+                            <option>Delivery</option>
+                        </select>
+
+                        <label for="payment">Preferred Payment Method</label>
+                        <select id="payment" required>
+                            <option value="">Select</option>
+                            <option>Cash</option>
+                            <option>GCash</option>
+                            <option>Bank Transfer</option>
+                            <option>Credit/Debit Card</option>
+                        </select>
+
+                        <label for="instructions">Special Instructions</label>
+                        <textarea id="instructions" rows="3" placeholder="Any special requests? (e.g., less sugar, extra mango)"></textarea>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-check"></i> Submit Order
+                        </button>
+                    </form>
+                    <p id="orderMessage"></p>
+
+                    <div style="text-align:center; margin-top:20px;">
+                        <span class="back-to-main" onclick="goHome()">
+                            <i class="fas fa-arrow-left"></i> Back to Main Page
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- end order-page -->
+
+        </div>
+        <!-- end page-content -->
+    </div>
+    <!-- end app-wrapper -->
+
+    <!-- ========== FLOATING CHAT WIDGET ========== -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h4><i class="fas fa-comment-dots"></i> TropiBot</h4>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-msg bot">Hi there! 👋 I'm TropiBot. Ask me about our menu, prices, or anything about TropiGo!</div>
+            </div>
+            <div class="chat-typing" id="chatTyping">
+                <span class="dot">•</span><span class="dot">•</span><span class="dot">•</span>
+            </div>
+            <div class="quick-replies" id="quickReplies">
+                <button data-q="What are your prices?">💰 Prices</button>
+                <button data-q="Are your blends healthy?">🥗 Healthy?</button>
+                <button data-q="What's your signature drink?">🌟 Signature</button>
+                <button data-q="Do you deliver?">🚚 Delivery</button>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Type a message..." />
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Chat Bubble -->
+        <button class="chat-bubble" id="chatBubble">
+            <i class="fas fa-comment-dots"></i>
+            <span class="badge">1</span>
+        </button>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
